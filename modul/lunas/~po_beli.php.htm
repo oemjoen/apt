@@ -1,0 +1,136 @@
+<script type="text/javascript" src="modul/lunas/ajax.js"></script>
+<script language="javascript">	
+$(document).ready(function() {
+	$("#refresh").click(function() {
+		window.location.reload();
+		//alert('tes');
+	});
+
+});
+	function editRow(ID){
+	   var kode = ID; 
+	   	$.ajax({
+			type	: "POST",
+			url		: "modul/lunas/cari.php",
+			data	: "kode="+kode,
+			dataType: "json",
+			success	: function(data){
+				$("#kode_barang").val(kode);
+				$("#nama_barang").val(data.nama_barang);
+				$("#satuan").val(data.satuan);
+				$("#harga_beli").val(data.harga_beli);
+				$("#harga_jual").val(data.harga_jual);
+				$("#stok_awal").val(data.stok_awal);
+			}
+		});
+
+	}
+
+	function buat_kode() {
+		var	kode	= $("#txt_kode").val();
+		var tgl		= $("#txt_tgl_beli").val();
+		var prins	= $("#cbo_prinsipal").val();
+		var cabang1 = $("#textcabang").val();
+		$.ajax({
+			type	: "POST",
+			url		: "modul/lunas/buat_nomor.php",
+			data	: "kode="+kode+"&tgl="+tgl+"&cabang1="+cabang1+"&prins="+prins,
+			dataType: "json",
+			success	: function(data){
+				$("#txt_kode").val(data.kode_pobeli);
+				//alert(data.kode_pobeli);
+			}
+		});		
+	}
+</script>
+	<h2 align="center">TRANSAKSI PO RUTIN</h2>
+	<p align="right">
+	  <input type="hidden" name="textcabang" id='textcabang' value = "<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: cabangrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>48</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+"/>
+	  <input type="hidden" name="kodeedit" id='kodeedit' value = "<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined index: no in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>49</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+"/>
+	  <input type="hidden" name="kode_user" id='kode_user' value = "<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: userrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>50</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+"/>
+	  
+    <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: namarr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>52</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+ - cabang <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: cabangrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>52</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+</p>
+
+	<table id='theList' width='100%'>
+<!--	<tr>
+		<td width='15%'>Kode PO</td>
+		<td width='2%'>:</td>
+		<td><input type='text' name='txt_kode' id='txt_kode'  size='50'  readonly></td>
+	</tr>-->
+	<tr>
+		<td width='15%'>Tanggal</td>
+		<td width='2%'>:</td>
+		<td><input type='text' name='txt_tgl_beli' id='txt_tgl_beli'  size='10' lenght='10'></td>
+	</tr>
+	<tr>
+		<td>No DIH</td>
+		<td>:</td>
+		<td><select name='cbo_kode' id='cbo_beli'>
+		<option value=''>-Pilih Kode-</option>
+		</select></td>
+	</tr>
+<!--<tr>
+		<td>Pilih Prinsipal</td>
+		<td>:</td>
+	<td><select name='cbo_prinsipal' id='cbo_prinsipal' class='input' onchange="buat_kode()">
+			<option value='' selected>-Pilih-</option>
+			<br />
+<font size='1'><table class='xdebug-error xe-fatal-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Fatal error: Call to undefined function mysql_query() in C:\wamp64\www\apt\modul\lunas\po_beli.php on line <i>79</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0014</td><td bgcolor='#eeeeec' align='right'>133440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\apt\modul\lunas\po_beli.php' bgcolor='#eeeeec'>..\po_beli.php<b>:</b>0</td></tr>
+</table></font>
+PHP Notice:  Undefined variable: cabangrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 48
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
+PHP Notice:  Undefined index: no in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 49
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
+PHP Notice:  Undefined variable: userrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 50
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
+PHP Notice:  Undefined variable: namarr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 52
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
+PHP Notice:  Undefined variable: cabangrr in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 52
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
+PHP Fatal error:  Call to undefined function mysql_query() in C:\wamp64\www\apt\modul\lunas\po_beli.php on line 79
+PHP Stack trace:
+PHP   1. {main}() C:\wamp64\www\apt\modul\lunas\po_beli.php:0
